@@ -1,5 +1,38 @@
-body{
-    border-color: rgb(135, 201, 228);
+
+
+.a1{
+    background-image: url('/static/image/img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+    background-position:1%;
+
     
-    
+}
+#a2{
+    background-image: url('/static/image/img2.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+    background-position:1%;
+ 
+}
+#a3{
+    display: flex;
+    background-image: url('/static/image/free-autumn-background-with-orange-leaves-and-space-for-text-free-image.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:100vh;
+    background-position: center;
+    justify-content: center;
+
+}
+#a22{
+
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 30px;
+    padding: 2px 50px;
 }

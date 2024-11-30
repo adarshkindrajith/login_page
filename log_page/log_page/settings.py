@@ -51,6 +51,8 @@ MIDDLEWARE = [
     
 ]
 
+
+
 ROOT_URLCONF = 'log_page.urls'
 
 TEMPLATES = [
@@ -123,7 +125,7 @@ STATICFILES_DIRS=[
 ]
 
 
-LOGIN_URL='/loginn/'
+LOGIN_URL='loginn/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
