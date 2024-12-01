@@ -18,8 +18,8 @@
                 <form action="" method="POST">
                 {% csrf_token %}
                 <h1 class="">Login</h1><br>
-                <input class="p-3" style=" border-color:  rgb(135, 201, 228); border-radius:20px;" type="username"placeholder="username"id="username"name="username"required><br><br>
-                <input class="p-3"style=" border-color:  rgb(135, 201, 228); border-radius:20px;" type="password"placeholder="password" id="password" name="password"required><br><br>
+                <input class="p-3" style=" border-color:  rgb(135, 201, 228); border-radius:20px;" type="username"placeholder="username"name="username"required><br><br>
+                <input class="p-3"style=" border-color:  rgb(135, 201, 228); border-radius:20px;" type="password"placeholder="password"name="password"required><br><br>
                 <div> {% if messages %}
                         {% for message in messages %}
                             <h6 class="text-black">{{ message }}</h6>

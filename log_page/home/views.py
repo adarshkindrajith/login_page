@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib import messages 
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
@@ -35,7 +35,7 @@ def signup(request):
     
     return render(request, 'signup.html')
 
+
 @login_required(login_url='loginn/')
-@cache_control(no_cache=True, no_store=True, must_revalidate=True)
 def home(request):
     return render(request, 'home.html')
