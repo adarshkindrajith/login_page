@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from django.contrib import messages 
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
@@ -37,5 +37,16 @@ def signup(request):
 
 
 @login_required(login_url='loginn/')
+@cache_control(no_cache=True, no_store=True, must_revalidate=True)
 def home(request):
     return render(request, 'home.html')
+
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='loginn')
+@cache_control(no_cache=True, no_store=True, must_revalidate=True)
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'You have been logged out successfully!')
+    return redirect('loginn')
+
