@@ -36,3 +36,22 @@
     border-radius: 30px;
     padding: 2px 50px;
 }
+.a44{
+    background-image: url('/static/image/a1.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height:100vh;
+    background-position: center;
+    justify-content: center;
+    display:flex;
+}
+.a55{
+    width: 400px;
+    background: transparent;
+    border: 2px solid  rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);                       /* control + shift + R  this is applyed within the server because sometimes css will not connect to html so this shortcut will used to connect css .*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 50px;
+    padding: 5px;
+}

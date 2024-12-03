@@ -29,19 +29,24 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
 
-        myuser = User.objects.create_user(username, email, password)
-        myuser.save()
-        return redirect('loginn')
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already exists. Please choose another one.")
+            return redirect('signup')
+        elif User.objects.filter(email=email).exists():
+            messages.error(request, "Email is already registered. Please use a different email.")
+            return redirect('signup')
+        else:
+            myuser = User.objects.create_user(username, email, password)
+            myuser.save()
+            return redirect('loginn')
     
     return render(request, 'signup.html')
 
 
-@login_required(login_url='loginn/')
+@login_required(login_url='loginn')
 @cache_control(no_cache=True, no_store=True, must_revalidate=True)
 def home(request):
     return render(request, 'home.html')
-
-from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='loginn')
 @cache_control(no_cache=True, no_store=True, must_revalidate=True)
