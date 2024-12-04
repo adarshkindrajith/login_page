@@ -29,10 +29,10 @@ def signup(request):
         email = request.POST['email']
         password = request.POST['password']
 
-        if User.objects.filter(username=username).exists():
+        if User.objects.filter(username=username):
             messages.error(request, "Username already exists. Please choose another one.")
             return redirect('signup')
-        elif User.objects.filter(email=email).exists():
+        elif User.objects.filter(email=email):
             messages.error(request, "Email is already registered. Please use a different email.")
             return redirect('signup')
         else:
